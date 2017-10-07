@@ -5,7 +5,7 @@ import re
 import time
 import urllib.request
 from bs4 import BeautifulSoup
- 
+
 def get_lyrics(artist,song_title):
     artist = artist.lower()
     song_title = song_title.lower()
@@ -15,7 +15,7 @@ def get_lyrics(artist,song_title):
     if artist.startswith("the"):    # remove starting 'the' from artist e.g. the who -> who
         artist = artist[3:]
     url = "http://azlyrics.com/lyrics/"+artist+"/"+song_title+".html"
-    
+
     try:
         content = urllib.request.urlopen(url).read()
         soup = BeautifulSoup(content, 'html.parser')
@@ -38,39 +38,17 @@ def get_lyrics(artist,song_title):
 #          # Create file with no header
 #          output.writerow(row)
 
-happy = pandas.read_csv('happy.csv')
-# sad = pandas.read_csv('sadboi.csv')
+# happy = pandas.read_csv('happy.csv')
+sad = pandas.read_csv('sadboi.csv')
 
-print("happy")
-
-lyrics = []
-foundSongs = []
-foundArtists = []
-count = 0
-total = 0
-for index, row in happy.iterrows():
-	r = get_lyrics(row['Artist'], row['Song'])
-	if r != "Exception occurred \nHTTP Error 404: Not Found":
-		lyrics += [r]
-		foundSongs += [row['Song']]
-		foundArtists += [row['Artist']]
-		print(index)
-		count += 1
-	total += 1
-print(count, total)
-
-dicto = {'Artist': foundArtists, 'Song': foundSongs, 'Lyrics': lyrics}
-df = pandas.DataFrame(data=dicto)
-df.to_csv("test.csv", index = False)
-
-# print("sad")
-
+# print("happy")
+#
 # lyrics = []
 # foundSongs = []
 # foundArtists = []
 # count = 0
 # total = 0
-# for index, row in sad.iterrows():
+# for index, row in happy.iterrows():
 # 	r = get_lyrics(row['Artist'], row['Song'])
 # 	if r != "Exception occurred \nHTTP Error 404: Not Found":
 # 		lyrics += [r]
@@ -79,14 +57,31 @@ df.to_csv("test.csv", index = False)
 # 		print(index)
 # 		count += 1
 # 	total += 1
-# 	time.sleep(1)
 # print(count, total)
-
+#
 # dicto = {'Artist': foundArtists, 'Song': foundSongs, 'Lyrics': lyrics}
 # df = pandas.DataFrame(data=dicto)
-# df.to_csv("finalsad.csv", index = False)
+# df.to_csv("test.csv", index = False)
 
+print("sad")
 
+lyrics = []
+foundSongs = []
+foundArtists = []
+count = 0
+total = 0
+for index, row in sad.iterrows():
+	r = get_lyrics(row['Artist'], row['Song'])
+	if r != "Exception occurred \nHTTP Error 404: Not Found":
+		lyrics += [r]
+		foundSongs += [row['Song']]
+		foundArtists += [row['Artist']]
+		print(index)
+		count += 1
+	total += 1
+	time.sleep(1)
+print(count, total)
 
-
-
+dicto = {'Artist': foundArtists, 'Song': foundSongs, 'Lyrics': lyrics}
+df = pandas.DataFrame(data=dicto)
+df.to_csv("testsad.csv", index = False)
