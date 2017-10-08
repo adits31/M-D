@@ -55,10 +55,10 @@
 <div id="Intro"><a href="#Intro"></a></div>
 		<div class="intro">
 			<div class = 'fadein'>
+				<img src = "img/landing_background/pattern(7).png">
 				<img src = "img/landing_background/pattern.png">
 				<img src = "img/landing_background/pattern (1).png">
 				<img src = "img/landing_background/pattern (2).png">
-				<img src = "img/landing_background/pattern (3).png">
 			</div>
 			<div class= "btn" type = button align = "center"><span>MÜD</span>
 			<div class= "content" align = "center">
@@ -75,7 +75,7 @@
 						<form>
 		  				<input type="text" align="center" name="feeling" placeholder="Type your desired feeling...">
 		  				<br></br>
-							<a href="#About-me" class="scroll-down" address="true"></a>
+							<a href="#About-me" class="scroll-down" address="true" onclick= "songs();songs1()"></a>
 						</form>
 					</div>
 			</div>
@@ -98,14 +98,29 @@
 
 <div class="tab-panels">
 	<section id="marzen" class="tab-panel">
-		<h2>6A. Märzen</h2>
-		<p><strong>Overall Impression:</strong> An elegant, malty German amber lager with a clean, rich, toasty and bready malt flavor, restrained bitterness, and a dry finish that encourages another drink. The overall malt impression is soft, elegant, and complex, with a rich aftertaste that is never cloying or heavy.</p>
-		<p><strong>History:</strong> As the name suggests, brewed as a stronger “March beer” in March and lagered in cold caves over the summer. Modern versions trace back to the lager developed by Spaten in 1841, contemporaneous to the development of Vienna lager. However, the Märzen name is much older than 1841; the early ones were dark brown, and in Austria the name implied a strength band (14 °P) rather than a style. The German amber lager version (in the Viennese style of the time) was first served at Oktoberfest in 1872, a tradition that lasted until 1990 when the golden Festbier was adopted as the standard festival beer.</p>
+		<h2>Recommended Music</h2>
+		<iframe id="playlist_link" src = "" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+			<script type="text/javascript">
+			function songs(){
+			document.getElementById("playlist_link").src = "https://open.spotify.com/embed/user/22gmmmdci4xjagxrlbj3qmesq/playlist/0gESNw3382UWl8PlHWT4Hx" ;}</script>	
 </section>
 	<section id="rauchbier" class="tab-panel">
-		<h2>6B. Rauchbier</h2>
-		<p><strong>Overall Impression:</strong>  An elegant, malty German amber lager with a balanced, complementary beechwood smoke character. Toasty-rich malt in aroma and flavor, restrained bitterness, low to high smoke flavor, clean fermentation profile, and an attenuated finish are characteristic.</p>
-		<p><strong>History:</strong> A historical specialty of the city of Bamberg, in the Franconian region of Bavaria in Germany. Beechwood-smoked malt is used to make a Märzen-style amber lager. The smoke character of the malt varies by maltster; some breweries produce their own smoked malt (rauchmalz).</p>
+		<h2>Recommended Pictures</h2>
+		<img id= "first" src= "img/download.png" height= "200" width = "200">
+		<img id= "second" src= "img/download.png" height= "200" width = "200">
+		<img id= "third" src="img/download.png" height= "200" width = "200">
+		<img id= "fourth" src= "img/download.png" height= "200" width = "200">
+		<script type="text/javascript">
+			function songs1(){
+			var output = ["img/img0.jpg","img/img1.jpg","img/img2.jpg",'img/img3.jpg'];
+			document.getElementById("first").src = output[0];
+			document.getElementById("second").src = output[1];
+			document.getElementById("third").src = output[2];
+			document.getElementById("fourth").src = output[3];
+
+		}	
+		</script>
 	</section>
 	<section id="dunkles" class="tab-panel">
 		<h2>6C. Dunkles Bock</h2>

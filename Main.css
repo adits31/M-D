@@ -22,12 +22,12 @@ html, body{
 
 .intro .btn {
 	font-family: 'Inconsolata', sans-serif;
-	font-size: 300%;
+	font-size: 500%;
 	font-weight: 400;
 	color: #D8D8D8;
 	text-decoration: none;
 	text-transform: uppercase;
-	padding: 8.5% 1%;
+	padding: 6.5% 1%;
 	margin: 40px auto;
 	height: 300px;
     width: 300px;
@@ -37,7 +37,6 @@ html, body{
 	transition: all .2s;
 	z-index: 1;
 	position: relative;
-	opacity: .4;
 	
 }
 .scroll-down {
@@ -84,8 +83,9 @@ input{
 }
 
 .btn:hover{
+	font-size: 300%;
 	padding: 1% 1%;
-	border-radius: 50%;
+	opacity: .4;
 	color:	#161629;
 	border-style: solid;
 	border-color: white;
@@ -125,10 +125,7 @@ input{
 .question{
 	font-size: 230%;
 }
-.w3-bar{
-	width: 100%;
-	background: grey;
-}
+
 button{
 	background: transparent;
 	border: none;

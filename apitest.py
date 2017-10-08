@@ -26,14 +26,14 @@ def get_photos(emotion, tags):
 					continue
 
 		for i in range(len(urls)):
-			num = len(next(os.walk("C:\\Users\\Manu\\Documents\\tumblr_pics_" + emotion))[2])
-			urllib.request.urlretrieve(urls[i], "C:\\Users\\Manu\\Documents\\tumblr_pics_" + emotion + "\\img" + str(num) + ".jpg")
+			num = len(next(os.walk("C:\\Users\\Micah\\Desktop\\Final Proj\\M-D\\tumblr_pics_" + emotion))[2])
+			urllib.request.urlretrieve(urls[i], "C:\\Users\\Micah\\Desktop\\Final Proj\\M-D\\tumblr_pics_" + emotion + "\\img" + str(num) + ".jpg")
 		total_photos += len(urls)
 	return total_photos
 
-emotions = {"fear" : ["fear", "death", "spooky"], \
-			"love" : ["love", "warmth", "intimacy"], \
-			"angry" : ["annoyed", "irritated", "livid"]}
+emotions = {"apathy" : ["disinterest", "indifference", "apathy"], \
+			"disgust" : ["repugnance", "nausea", "aversion"], \
+			"surprise" : ["excited", "gift", "astonished"]}
 for e in emotions:
 	print(get_photos(e, emotions[e]))
 # frightened, dread
