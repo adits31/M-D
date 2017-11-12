@@ -4,7 +4,7 @@ import pandas
 import csv
 
 def saveCSV(songArtistCSV):
-	df = pandas.read_csv(songArtistCSV, encoding = 'latin1')
+	df = pandas.read_csv(songArtistCSV, encoding = 'latin-1')
 	nf = 0
 	lyrArr = []
 	for index, row in df.iterrows():
